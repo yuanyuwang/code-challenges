@@ -5,6 +5,7 @@ import org.specs2.mutable.Specification
 class SConnectedGraphSpec extends Specification {
 
   section("scala")
+  section("graph")
   "SConnectedGraph" should {
     "work with an acyclic graph" in {
       val dest = Node(9)
@@ -27,5 +28,6 @@ class SConnectedGraphSpec extends Specification {
       SConnectedGraph.run(start, start) must_== true
     }
   }
+  section("graph")
   section("scala")
 }

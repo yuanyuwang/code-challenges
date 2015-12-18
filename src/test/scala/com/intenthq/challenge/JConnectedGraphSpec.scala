@@ -9,6 +9,7 @@ import org.specs2.mutable.Specification
 class JConnectedGraphSpec extends Specification {
 
   section("java")
+  section("graph")
   "JConnectedGraph" should {
     "work with an acyclic graph" >> {
       //Graph: http://upload.wikimedia.org/wikipedia/commons/0/03/Directed_acyclic_graph_2.svg
@@ -32,5 +33,6 @@ class JConnectedGraphSpec extends Specification {
       JConnectedGraph.run(start, start) must_== true
     }
   }
+  section("graph")
   section("java")
 }

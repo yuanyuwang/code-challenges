@@ -15,7 +15,7 @@ public class JConnectedGraph {
   // run(a, c) == true
   // run(b, d) == false
   public static boolean run(JNode source, JNode target) {
-    return false;
+    throw new RuntimeException("Not implemented");
   }
 
   public static class JNode {
