@@ -82,3 +82,6 @@ src_managed/
 project/boot/
 .history
 .cache
+
+### Python ###
+**.pyc
