@@ -20,7 +20,7 @@ class SantaString(str):
     """
 
     def is_nice(self):
-        return ValueError("Not Implemented.")
+        raise ValueError("Not Implemented.")
 
     def is_naughty(self):
-        return ValueError("Not Implemented.")
+        raise ValueError("Not Implemented.")

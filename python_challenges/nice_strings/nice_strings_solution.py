@@ -26,5 +26,5 @@ class SantaString(str):
     #Using all-caps for this type of variable is a convention, what does it signify?
     #Why do we use a frozenset?
     VOWELS = "aeiou"
-    BAD_SUBSTRINGS = frozenset('ab', 'cd', 'pq', 'xy')
+    BAD_SUBSTRINGS = frozenset(['ab', 'cd', 'pq', 'xy'])
 
