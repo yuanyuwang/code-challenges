@@ -1,14 +1,12 @@
 # Intent HQ Code Challenges
 
-Home of the katas we sometimes use for the candidates.
+Home of the katas we sometimes use for our interview candidates.
 
-```
-To test your scala code:
-$ sbt testOnly -- include scala
+The challenges are available in:
 
-To test your java code:
-$ sbt testOnly -- include java
+* Java
+* Scala
+* Python
 
-To test a specific challenge:
-$ sbt testOnly -- include nice/graph -- exclude java/scala
-```
+See the `README.md` in the directory corresponding to each language for more
+information on running the challenges and their tests.
