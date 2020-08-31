@@ -83,5 +83,8 @@ project/boot/
 .history
 .cache
 
+#javascript section
+node_modules
+
 ### Python ###
 **.pyc
