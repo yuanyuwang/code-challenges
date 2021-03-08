@@ -12,4 +12,8 @@ export class ProductsService {
   findAll() {
     return products;
   }
+
+  findOne(sku: string) {
+    return products.find((product) => product.sku === sku);
+  }
 }

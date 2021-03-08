@@ -42,4 +42,16 @@ describe('AppController (e2e)', () => {
         ],
       });
   });
+
+  it('/basket (PUT)', () => {
+    return request(app.getHttpServer())
+      .put('/basket')
+      .send([{ sku: 'product-1', quantity: 2 }])
+      .expect(200)
+      .expect({
+        totalBeforeDiscounts: 246,
+        discounts: 0,
+        grandTotal: 246,
+      });
+  });
 });

@@ -18,7 +18,7 @@ In our supermarket we have defined [the following items](http://localhost:3000/p
 - *Potato bag*: 0.75€ per unit (sku: product-2)
 - *Sauce bucket*: 0.50€ per unit (sku: product-3)
 
-We can calculate [basket totals](http://localhost:3000/basket) by `POST`ing an array representing the basket:
+We can calculate [basket totals](http://localhost:3000/basket) by `PUT`ing an array representing the basket:
 ```javascript
 {
   basket: [
