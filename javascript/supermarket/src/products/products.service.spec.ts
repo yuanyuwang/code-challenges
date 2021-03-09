@@ -27,4 +27,12 @@ describe('ProductsService', () => {
       },
     ]);
   });
+
+  it('should return one product', () => {
+    expect(service.findOne('product-2')).toEqual({
+      sku: 'product-2',
+      name: 'Potato bag',
+      price: 75,
+    });
+  });
 });
