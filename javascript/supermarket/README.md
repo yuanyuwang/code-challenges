@@ -15,7 +15,7 @@ Run `npm install`, then run `npm start:dev` to start the application,  `npm test
 ## What's in the app?
 In our supermarket we have defined [the following items](http://localhost:3000/products):
 - *Soda can*: 1.23€ per unit (sku: product-1)
-- *Potato bag*: 0.75€ per unit (sku: product-2)
+- *Crisp bag*: 0.75€ per unit (sku: product-2)
 - *Sauce bucket*: 0.50€ per unit (sku: product-3)
 
 We can calculate [basket totals](http://localhost:3000/basket) by `PUT`ing an array representing the basket:
@@ -58,10 +58,9 @@ Also, we would like to start selling oranges, but those are priced by weight, no
 
 Please implement items priced by weight
 
-## Stage 3 (Optional)
+## Optional stages
+You can pick any of the following (or none), in no particular order
 
-What happens when unknown items are added to the basket?
-
-<!-- ## Stage 3
-
-Meal Deal (think of it later) -->
+- Do not allow negative or zero quantities
+- Validate that products added to a basket are defined
+- Meal deal: Buy a Crisp Bag and a Soda Can for 1.50€
