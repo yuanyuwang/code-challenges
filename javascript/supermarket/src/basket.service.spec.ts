@@ -1,4 +1,4 @@
-import { ProductsService } from '../products/products.service';
+import { ProductsService } from './products.service';
 import { Test, TestingModule } from '@nestjs/testing';
 import { BasketService } from './basket.service';
 
