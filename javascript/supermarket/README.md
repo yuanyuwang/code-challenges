@@ -48,7 +48,7 @@ So the above basket will return the following totals:
 {
   totalBeforeDiscounts: 794,
   discounts: 158,
-  total: 636
+  grandTotal: 636
 }
 ```
 
