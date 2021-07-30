@@ -11,24 +11,17 @@ Run `npm install`, then run `npm start` to start the application and `npm test` 
 
 This simple app contains 3 counters and buttons to add and substract numbers every time the buttons are hit, or at least that is what it should be doing. The main goal of this exercise is to provide some basic functionality to this buttons.
 
-## Stage1:
-Update the Counter component to take 2 callback methods that will be executed every time each button is clicked. Each callback should take a single, integer value as a parameter which is the amount to increment the counter's existing value by.
 
+## Stage1:
+The `+` and `-` currently don't do anything. We'd like to see that everytime
+the `+` button is clicked, the associated number displayed should be incremented by `1` and when the `-` button is clicked, the associated number displayed should be decremented by `1`.
 ## Stage2:
-The data array is a global variable. This refactor is about making it only available for App.
+There is new requirement for an extra Counter and ensure it's value is updated independently from the others.
 
 ## Stage3:
-Render a fourth Counter component and ensure it's value is updated independently from the others.
+Users expressed that would be useful to see the total number that represents the sum of all the counters. Add a new element to the application to show this result.
 
 ## Stage4:
-Give the application some basic styling, it doesn't need to be fancy. The buttons need to have different colours, and should be aligned with
-the numbers. Finally add a separator, so it is easy do distinguish the Total Counter from the rest of Counters.
+The application has no style whatsoever. We include an screenshot. Try to add some CSS so it looks as similar as possible.
 
-## Stage5:
-Create a Total component, which should display below the Counter components and always display the running total of all the Counter values.
-
-## Stage6:
-Refactor Counter, so it only accepts one callback method that takes a single integer parameter. Make sure all the Counter ocurrences still update independently
-
-## Stage7:
-Add a new component to the main App to establish an initial numbers for the Counters, it can be 0 or it can be a different number, and when the user hits the buttons, the counters should increase accordingly. This button can be hit at any time, so if there is a Counter showing `20` and you establish the new initial number to be `5`, the next time the `+` button is clicked, it should show `6`.
+![Counter example](counters.png)
