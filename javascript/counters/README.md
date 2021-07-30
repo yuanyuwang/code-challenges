@@ -23,3 +23,5 @@ Users expressed that would be useful to see the total number that represents the
 
 ## Stage4:
 The application has no style whatsoever. We include an screenshot. Try to add some CSS so it looks as similar as possible.
+
+![Counter example](counters.png)
