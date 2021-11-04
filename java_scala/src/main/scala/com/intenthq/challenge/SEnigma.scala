@@ -1,5 +1,9 @@
 package com.intenthq.challenge;
 
+import scala.collection.mutable
+case class TryNode(tryNodes: collection.mutable.Map[Int, TryNode]= collection.mutable.Map[Int, TryNode](), var isWord: Boolean = false, var word: Char ='0')
+
+
 object SEnigma {
 
   // We have a system to transfer information from one place to another. This system
@@ -21,7 +25,67 @@ object SEnigma {
   //
   // Following the above rules, the message would be: “1N73N7 HQ”
   // Check the tests for some other (simpler) examples.
-
-  def deciphe(map: Map[Int, Char])(message: List[Int]): String = ???
+  def intToArray(input: Int): List[Int] ={
+    var result = List[Int]()
+    var tmp = input
+    while (tmp >=10){
+      result = result:+(tmp%10)
+      tmp/=10
+    }
+    result = result:+tmp
+    result.reverse
+  }
+  def buildTry(key: Int, value: Char, tryNode: TryNode): TryNode= {
+    val keyArray = intToArray(key)
+    var cur:  TryNode = tryNode
+    for (key<- keyArray){
+      if (!cur.tryNodes.contains(key)){
+        cur.tryNodes +=( key -> TryNode())
+      }
+      cur = cur.tryNodes(key)
+    }
+    cur.isWord = true
+    cur.word = value
+    tryNode
+  }
+  def buildTries(map: Map[Int, Char], tryNode: TryNode): TryNode= {
+    for ((key, value) <- map) {
+      buildTry(key, value, tryNode)
+    }
+    tryNode
+  }
+  def deciphe(map: Map[Int, Char])(message: List[Int]): String = {
+    var tryNode = TryNode()
+    buildTries(map, tryNode)
+    var result: String = ""
+    var i, wordEndPos, curPos: Int =0
+    var find: Boolean = false
+    var word: Char ='0'
+    var cur: TryNode =  tryNode
+    while(i<message.length){
+      curPos = i
+      cur = tryNode
+      find = false
+      if(cur.tryNodes.contains(message(i))){
+        while(curPos < message.length && cur.tryNodes.contains(message(curPos))){
+          cur = cur.tryNodes(message(curPos))
+          if (cur.isWord){
+            find = true
+            wordEndPos = curPos
+            word = cur.word
+          }
+          curPos+=1
+        }
+      }
+      if (find){
+        result+=word
+        i= wordEndPos
+      }else{
+        result+=message(i)
+      }
+      i+=1
+    }
+    result
+  }
 
 }
