@@ -21,5 +21,41 @@ object SNiceStrings {
 //    dvszwmarrgswjxmb is naughty because it contains only one vowel.
 //    How many strings are nice?
 
-  def nice(xs: List[String]): Int = ???
+  def doubleLetter(s: String): Boolean ={
+    if (s.isEmpty){
+      return false
+    }
+
+    for(i <- 0 until s.length()-1) {
+      if (s.charAt(i)==s.charAt(i+1)){
+        return true
+      }
+    }
+    false
+  }
+  def containBadString(s: String): Boolean = {
+    val badWordList: List[String] = List("ab", "cd", "pq", "xy")
+    for (word <- badWordList){
+      if (s.contains(word)){
+        return true
+      }
+    }
+    false
+  }
+  def containThreeVowels(s: String): Boolean = {
+    var vowels : Set[Char] = Set('a','e','i','o','u')
+    var counter = 0
+    for(i <- 0 until s.length()) {
+      if (vowels(s.charAt(i)) ){
+        counter+=1
+        if (counter == 3){
+          return true
+        }
+      }
+    }
+    false
+  }
+  def nice(xs: List[String]): Int = {
+    xs.map(_.toLowerCase).filterNot(containBadString).filter(doubleLetter).count(containThreeVowels)
+  }
 }
